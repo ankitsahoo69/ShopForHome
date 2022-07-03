@@ -1,0 +1,17 @@
+i {
+    margin-right: 10px;
+}
+
+.category-table {
+    padding: 15px;
+}
+
+button {
+    margin: 5px;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+}

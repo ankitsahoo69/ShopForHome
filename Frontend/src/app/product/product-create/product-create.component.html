@@ -1,0 +1,141 @@
+<!-- <div class="card">
+    <div class="card-header">Manage Categories</div>
+    <div class="card-body">
+      <h5 class="card-title">{{ editMode ? "Edit Product" : "Add Product" }}</h5>
+      <p class="card-text">You can add or create product here</p>
+      <button
+        class="btn btn-primary"
+        (click)="onSubmit()"
+        [disabled]="form.invalid"
+      >
+        <i class="fa-solid fa-plus"></i>{{ editMode ? "Update" : "Create" }}
+      </button>
+      <a class="btn btn-secondary" routerLink="form" (click)="cancel()">Cancel</a>
+    </div>
+    <div class="form">
+      <form [formGroup]="form">
+        <div class="form-row row">
+          <div class="form-group col-md-4">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              formControlName="name"
+              placeholder="Name of category"
+            />
+            <small
+              *ngIf="form.controls['name'].invalid && isSubmitted"
+              style="color: red"
+              >Name is required</small
+            >
+          </div>
+          <div class="form-group col-md-4">
+            <label for="brand">Brand</label>
+            <input
+              type="text"
+              class="form-control"
+              id="brand"
+              formControlName="brand"
+              placeholder="Brand"
+            />
+            <small
+              *ngIf="form.controls['brand'].invalid && isSubmitted"
+              style="color: red"
+              >Brand is required</small
+            >
+          </div>
+          <div class="form-group col-md-4">
+            <label for="price">Price</label>
+            <input
+              type="number"
+              class="form-control"
+              id="price"
+              formControlName="price"
+              placeholder="Price"
+            />
+            <small
+              *ngIf="form.controls['price'].invalid && isSubmitted"
+              style="color: red"
+              >Price is required</small
+            >
+          </div>
+        </div>
+        <div class="form-row row">
+          <div class="form-group col-md-4">
+            <label for="stock">Stock</label>
+            <input
+              type="number"
+              class="form-control"
+              id="stock"
+              formControlName="countInStock"
+              placeholder="Stock"
+            />
+            <small
+              *ngIf="form.controls['countInStock'].invalid && isSubmitted"
+              style="color: red"
+              >Stock is required</small
+            >
+          </div>
+          <div class="form-group col-md-4">
+            <label for="category">Category</label>
+            <select
+              class="form-select form-select-sm-lg mb-3"
+              aria-label=".form-select-sm example"
+              formControlName="category"
+            >
+              <option selected>Select the category</option>
+              <option
+                [value]="category.id"
+                *ngFor="let category of categories"
+                [ngValue]="category.id"
+              >
+                {{ category.name }}
+              </option>
+            </select>
+            <small
+              *ngIf="form.controls['category'].invalid && isSubmitted"
+              style="color: red"
+              >Please select a category</small
+            >
+          </div>
+          <div class="form-group col-md-12">
+            <label for="description">Description</label>
+            <textarea
+              name="description"
+              id="description"
+              class="form-control"
+              formControlName="description"
+              rows="3"
+            ></textarea>
+            <small
+              *ngIf="form.controls['description'].invalid && isSubmitted"
+              style="color: red"
+              >Descriptionis required</small
+            >
+          </div>
+          <div class="form-group col-md-12">
+            <label for="richDescription">Product Details</label>
+            <textarea
+              name="richDescription"
+              id="richDescription"
+              class="form-control"
+              formControlName="richDescription"
+              rows="10"
+            ></textarea>
+          </div>
+          <div class="form-group col-md-12">
+            <label for="image">Main Image</label>
+            <input
+              class="form-control"
+              type="file"
+              accept="image/*"
+              formControlName="image"
+              (change)="onUpload($event)"
+            />
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+   -->

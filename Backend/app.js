@@ -1,10 +1,10 @@
 const express = require('express');
-const app = express();
 const mongoose = require('mongoose');
 const cors = require('cors');
 const auth = require("./middleware/jwt");
 
 
+const app = express();
 const port = process.env.PORT || 3000;
 
 

@@ -16,9 +16,17 @@ body {
     margin-right: auto;
     width: 50%;
 }
+.h5 {
+    font-size: 25px;
+    padding-top: 25px;
+}
 
 p{
-    margin-top: 50px;
-    font-size: 25px;
+    margin-top: 25px;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.bigfont li{
+    font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
 }

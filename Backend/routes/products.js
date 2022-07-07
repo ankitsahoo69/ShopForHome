@@ -22,7 +22,7 @@ const storage = multer.diskStorage({
         const ext = MIME_TYPE_MAP[file.mimetype];
         cb(null, name + "-" + Date.now() + "." + ext);
     }
-});
+})
 
 
 const upload = multer({ storage: storage });
@@ -35,7 +35,7 @@ router.get('/', async (req, res) => {
 })
 
 
-router.get('/:id',  async (req, res) => {
+router.get('/:id', async (req, res) => {
     if (!mongoose.isValidObjectId(req.params.id)) {
         return res.status(400).send('invalid product id');
     }
@@ -103,6 +103,15 @@ router.delete('/:id', async (req, res) => {
     const product = await Product.findByIdAndRemove(req.params.id);
     if (!product) res.status(500).send('cannot delete product');
     res.status(200).send(product);
+})
+
+
+router.get('/get/count', async (req, res) => {
+    const productCount = await Product.countDocuments();
+    if (!productCount) {
+        return res.status(500).json({ success: false });
+    }
+    res.send({ productCount: productCount });
 })
 
 

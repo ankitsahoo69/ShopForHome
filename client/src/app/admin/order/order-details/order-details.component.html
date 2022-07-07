@@ -1,0 +1,112 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="head">
+    <h3>Order Details</h3>
+    <div>
+        <button class="btn btn-success btn1" (click)="onSave()">Save</button>
+        <button class="btn btn-danger btn1" (click)="back()">Back</button>
+    </div>
+</div>
+
+
+<div class="card" *ngIf="order">
+    <div class="card-header">Order Details</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <h6>Order Id</h6>
+                <p>{{ order.id }}</p>
+            </div>
+            <div class="col-sm-4">
+                <h6>Order Date</h6>
+                <p>{{ order.dateOrdered | date: "short" }}</p>
+            </div>
+            <div class="col-sm-4">
+                <h6>Order Status</h6>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" #status
+                    (change)="onSelected(status.value)" [value]="currentStatus">
+                    <option value="Pending">Pending</option>
+                    <option value="Processed">Processed</option>
+                    <option value="Shipped">Shipped</option>
+                    <option value="Delivered">Delivered</option>
+                    <option value="Failed">Failed</option>
+                </select>
+            </div>
+            <div class="col-sm-4">
+                <h6>Order Total Price</h6>
+                <p>{{ order.totalPrice | currency: "INR":"symbol" }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="card" *ngIf="order">
+    <div class="card-header">Order Items</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2">
+                <h6>Name</h6>
+            </div>
+            <div class="col-sm-2">
+                <h6>Category</h6>
+            </div>
+            <div class="col-sm-2">
+                <h6>Price</h6>
+            </div>
+            <div class="col-sm-2">
+                <h6>Quantity</h6>
+            </div>
+            <div class="col-sm-2">
+                <h6>Subtotal</h6>
+            </div>
+        </div>
+        <div class="row" *ngFor="let orderItem of order.orderItem">
+            <div class="col-sm-2">
+                <p>{{ orderItem.product.name }}</p>
+            </div>
+            <div class="col-sm-2">
+                <p>{{ orderItem.product.category }}</p>
+            </div>
+            <div class="col-sm-2">
+                <p>{{ orderItem.product.price | currency: "INR":"symbol" }}</p>
+            </div>
+            <div class="col-sm-2">
+                <p>{{ orderItem.quantity }}</p>
+            </div>
+            <div class="col-sm-2">
+                <p>{{ orderItem.product.price * orderItem.quantity | currency: "INR":"symbol" }}</p>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="row" style="color: red">
+        <div class="col-sm-2 offset-md-8">
+            <p style="font-weight: bold">Total Price:</p>
+        </div>
+        <div class="col-sm-2">
+            <p>{{ order.totalPrice | currency: "INR":"symbol" }}</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="card" *ngIf="order">
+    <div class="card-header">Order Address</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <h6>Order Address</h6>
+                {{ order.shippingAddress }} <br />{{ order.city }} <br />{{ order.country }}
+            </div>
+            <div class="col-sm-4">
+                <h6>Customer Info</h6>
+                <p>{{ order.user.name }}</p>
+            </div>
+            <div class="col-sm-4">
+                <h6>Contact Info</h6>
+                <p>{{ order.phone }}</p>
+                <p>{{ order.user.email }}</p>
+            </div>
+        </div>
+    </div>
+</div>

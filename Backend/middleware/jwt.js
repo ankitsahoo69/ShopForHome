@@ -9,7 +9,8 @@ function auth() {
     isRevoked: isRevoked,
   }).unless({
     path: [
-      { url: '/api/products', methods: ['GET', 'OPTIONS'] },
+      { url: /\/api\/products(.*)/, methods: ['GET', 'PUT', 'OPTIONS'] },
+      { url: /\/api\/orders(.*)/, methods: ['GET', 'OPTIONS', 'POST'] },
       '/api/users/login',
       '/api/users/register'
     ]

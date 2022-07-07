@@ -1,0 +1,43 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="cart">
+    <div class="row">
+      <div class="col">
+        <div class="empty" *ngIf="cartItems.length <= 0">
+          <div class="center">
+            <img src="https://multivendor.amrkart.com/public/not-found.jpg">
+            <h5>Your Cart is Empty!!</h5>
+            <h6>Looks like you haven't added anything to your cart yet</h6><br>
+            <button routerLinkActive="active" routerLink="/products" class="btn btn-secondary">Show Now</button>
+          </div>
+        </div>
+        <div class="row item" *ngFor="let item of cartItems">
+          <div class="col-md-2">
+            <img class="cart-image" [src]="item.product.image" />
+          </div>
+          <div class="col-md-7">
+            <div class="name">{{ item.product.name }}</div>
+            <div class="price">
+              {{ item.product.price | currency: "INR" }}
+            </div>
+            <div class="remove">
+              <button class="btn btn-danger" (click)="delete(item)">Delete</button>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="quantity">
+              <label for="quatity">Quantity:</label><br />
+              <input type="number" [(ngModel)]="item.quantity" id="quantity" min="0" max="100"
+                placeholder="Enter the quantity" (change)="updateQuantity($event, item)" />
+            </div>
+            <div class="subtotal">
+              Subtotal:
+              <span class="value">{{ item.product.price * item.quantity | currency: "INR" }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

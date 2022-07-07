@@ -17,10 +17,12 @@ app.use(auth());
 
 const productsRoutes = require('./routes/products');
 const usersRoutes = require('./routes/users');
+const ordersRoutes = require('./routes/orders');
 
 
 app.use('/api/products', productsRoutes);
 app.use('/api/users', usersRoutes);
+app.use('/api/orders', ordersRoutes);
 
 
 mongoose.connect('mongodb://localhost:27017/homeshop').then(() => {
@@ -32,4 +34,4 @@ mongoose.connect('mongodb://localhost:27017/homeshop').then(() => {
 
 app.listen(port , () => {
     console.log(`Server is Running at http://localhost:${port}/api/`)
-});
+})

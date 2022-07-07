@@ -1,0 +1,35 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="cart">
+        <div class="row">
+            <div class="col">
+                <div class="empty" *ngIf="cartItems.length <= 0">
+                    <div class="center">
+                        <img src="https://multivendor.amrkart.com/public/not-found.jpg">
+                        <h5>Your Wishlist is Empty!!</h5>
+                        <h6>Seems like you don't have wishes here</h6>
+                        <h6>Make a Wish!</h6> <br>
+                        <button routerLinkActive="active" routerLink="/products" class="btn btn-secondary">Explore
+                            Now</button>
+                    </div>
+                </div>
+                <div class="row item" *ngFor="let item of cartItems">
+                    <div class="col-md-2">
+                        <img class="cart-image" [src]="item.product.image" />
+                    </div>
+                    <div class="col-md-4">
+                        <div class="name">{{ item.product.name }}</div>
+                        <div class="price">{{ item.product.price | currency: "INR" }}</div>
+                        <div class="remove">
+                            <button class="btn btn-danger" (click)="delete(item)">Delete</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="desc">{{ item.product.description }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

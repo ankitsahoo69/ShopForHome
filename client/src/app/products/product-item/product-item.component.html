@@ -1,0 +1,25 @@
+<ng-container *ngIf="product">
+    <div class="card-group">
+        <div class="card-body">
+            <div class="card">
+                <img class="card-img-top" src="{{ product.image }}" alt="{{ product.name }}"
+                    [routerLink]="'/products/' + product.id" />
+                <div class="card-body">
+                    <h5 class="card-title"
+                        style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{
+                        product.name }}</h5>
+                    <p class="card-text"
+                        style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;"
+                        *ngIf="product.stock > 0"><strong>Stock</strong>: {{ product.stock }}</p>
+                    <p class="card-text"><strong>Price</strong>: {{ product.price | currency: "INR":"symbol" }}</p>
+                    <button class="btn btn-secondary" (click)="addToWishlist()">
+                        Add to Wishlist
+                    </button>
+                    <button class="btn btn-secondary" (click)="addToCart()" [disabled]="product.stock <= 0">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>

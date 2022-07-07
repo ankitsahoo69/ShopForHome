@@ -66,8 +66,8 @@ router.post('/login', async (req, res) => {
     const user = await User.findOne({ email: req.body.email });
     if (!user) res.status(500).send('cannot find user');
     if (user && bcrypt.compareSync(req.body.password, user.passwordHash)) {
-        const token = jwt.sign({ userId: user._id, admin: user.admin }, 'secret', { expiresIn: '1d' })
-        res.status(200).send({ name: user.name, _id: user._id, token: token })
+        const token = jwt.sign({ userId: user.id, admin: user.admin }, 'secret', { expiresIn: '1d' })
+        res.status(200).send({ name: user.name, id: user.id, token: token })
     } else {
         res.status(400).send('wrong password');
     }
@@ -111,6 +111,15 @@ router.delete('/:id', async (req, res) => {
     const user = await User.findByIdAndRemove(req.params.id);
     if (!user) res.status(500).send('cannot delete user');
     res.status(200).send(user);
+})
+
+
+router.get('/get/count', async (req, res) => {
+    const userCount = await User.countDocuments();
+    if (!userCount) {
+        res.status(500).json({ success: false });
+    }
+    res.send({ userCount: userCount });
 })
 
 

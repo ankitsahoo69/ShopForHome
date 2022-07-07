@@ -1,0 +1,39 @@
+.carousel-inner .carousel-item img {
+  height: 95vh;
+}
+
+.sort {
+  margin: 1.2rem 0;
+  width: 100%;
+}
+
+.heading {
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.sub_head {
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.card {
+  padding: 20px;
+  margin: 40px;
+  background-color: gainsboro;
+}
+
+.card img {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 15px;
+}
+
+.card-img-top:hover {
+  opacity: 70%;
+}
+
+.heading,
+h3 {
+  margin-top: 10px;
+}

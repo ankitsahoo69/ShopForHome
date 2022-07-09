@@ -1,5 +1,6 @@
 <app-navbar></app-navbar>
 <div class="signup col-lg-5 m-auto">
+    <h2 class="heading">SIGN UP</h2>
     <form [formGroup]="form" class="text-left">
         <div class="form-group">
             <label for="exampleInputEmail1">Name</label>
@@ -13,7 +14,7 @@
             <label *ngIf="form.controls['email'].invalid && isProcessing">
                 <label *ngIf="form.controls['email'].errors['required']">*</label>
                 <span *ngIf="form.controls['email'].errors['email']"></span>
-                <span>&nbsp; is invalid</span>
+                <span style="color: red">Email is invalid</span>
             </label>
             <input type="text" formControlName="email" class="form-control" placeholder="Enter Email" />
         </div><br>
@@ -45,6 +46,6 @@
         </div><br>
         <button type="submit" class="btn btn-secondary" (click)="signup()">Sign Up</button>
     </form>
-    <a class="d-block text-center mt-2 small" routerLinkActive="active" routerLink="/login">Already have an account?</a>
+    <a class="d-block text-center " routerLinkActive="active" routerLink="/login">Already have an account?</a>
 </div>
 <app-footer></app-footer>

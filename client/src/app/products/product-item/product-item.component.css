@@ -1,19 +1,22 @@
 .card {
   padding: 20px;
-  margin: 40px;
+  margin: 30px;
   background-color: gainsboro;
 }
 
 .card img {
   width: 200px;
   height: 200px;
-  margin-bottom: 15px;
+  transition: 0.3s ease-in-out;
 }
 
-.card-img-top:hover {
-  opacity: 70%;
+.card img:hover {
+  transition: 0.3s ease-in-out;
+  transform: scale(1.1);
+  cursor: pointer;
 }
 
 .btn{
   margin: 5px;
+  width: 100%;
 }

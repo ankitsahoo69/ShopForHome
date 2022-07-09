@@ -76,8 +76,4 @@ export class CheckoutComponent implements OnInit {
     })
   }
 
-  
-  back() {
-    this.router.navigate(['/cart']);
-  }
 }

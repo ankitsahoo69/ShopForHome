@@ -56,10 +56,6 @@
   color: green;
 }
 
-.empty {
-  margin-top: 50px;
-}
-
 .summary {
   margin-top: 50px;
   background-color: white;
@@ -88,4 +84,9 @@
 
 .summary button {
   width: 100%;
+}
+
+.heading {
+  text-align: center;
+  margin: 20px;
 }

@@ -1,5 +1,9 @@
-.form-control{
-    width: 800px;
+i{
+    cursor: pointer;
+}
+
+.se{
+    margin: auto;
     margin-top: 20px;
-    margin-left: 600px;
+    width: 50%;
 }

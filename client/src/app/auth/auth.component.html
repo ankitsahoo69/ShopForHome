@@ -1,5 +1,6 @@
 <app-navbar></app-navbar>
 <div class="d-grid gap-2 col-6 mx-auto">
+  <h2 class="heading" *ngIf="!userName">CHOOSE USER</h2>
   <button class="btn btn-secondary sg" type="button" routerLink="/admin-login" *ngIf="!userName">Login As Admin</button>
   <button class="btn btn-secondary sg" type="button" routerLink="/login" *ngIf="!userName">Login As User</button>
   <div class="lg" *ngIf="userName">

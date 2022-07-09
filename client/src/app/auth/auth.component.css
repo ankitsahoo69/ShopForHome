@@ -5,10 +5,14 @@
 
 p {
     font-size: 30px;
-    margin-left: 20px;
+    text-align: center;
 }
 
 .lg {
-    width: 58%;
+    width: 100%;
 }
 
+.heading {
+    text-align: center;
+    margin: 20px;
+}

@@ -15,7 +15,7 @@
 }
 
 .cart .cart-image {
-  height: 150px;
+  height: 200px;
   width: 100%;
 }
 
@@ -36,6 +36,7 @@
   margin-top: 15px;
 }
 
-.empty {
-  margin-top: 50px;
+.heading {
+  text-align: center;
+  margin: 20px;
 }

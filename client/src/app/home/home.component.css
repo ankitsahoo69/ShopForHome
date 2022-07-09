@@ -2,38 +2,25 @@
   height: 95vh;
 }
 
-.sort {
-  margin: 1.2rem 0;
-  width: 100%;
-}
-
-.heading {
+.heading ,.sub_head {
   text-align: center;
-  font-family: 'Times New Roman', Times, serif;
-}
-
-.sub_head {
-  text-align: center;
-  font-family: 'Times New Roman', Times, serif;
+  margin: 20px;
 }
 
 .card {
   padding: 20px;
-  margin: 40px;
+  margin: 30px;
   background-color: gainsboro;
 }
 
 .card img {
   width: 200px;
   height: 200px;
-  margin-bottom: 15px;
+  transition: 0.3s ease-in-out;
 }
 
-.card-img-top:hover {
-  opacity: 70%;
-}
-
-.heading,
-h3 {
-  margin-top: 10px;
+.card img:hover {
+  transition: 0.3s ease-in-out;
+  transform: scale(1.1);
+  cursor: pointer;
 }

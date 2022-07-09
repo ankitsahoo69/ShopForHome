@@ -32,7 +32,6 @@ export class OrderListComponent implements OnInit {
 
   deleteOrder(id: string) {
     this.orderService.deleteOrder(id).subscribe((response) => {
-      alert('Order is deleted');
       this.getOrders();
     })
   }

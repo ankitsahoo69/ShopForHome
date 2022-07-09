@@ -1,13 +1,11 @@
 .heading {
     padding: 25px;
     text-align: center;
-    font-family: 'Times New Roman', Times, serif;
 }
 
 body {
     margin-left: 50px;
     margin-right: 50px;
-    font-family: 'Times New Roman', Times, serif;
 }
 
 .center {
@@ -24,9 +22,7 @@ body {
 p{
     margin-top: 25px;
     font-size: 20px;
-    font-family: 'Times New Roman', Times, serif;
 }
 .bigfont li{
     font-size: 20px;
-    font-family: 'Times New Roman', Times, serif;
 }

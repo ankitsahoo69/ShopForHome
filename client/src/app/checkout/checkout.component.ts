@@ -21,6 +21,7 @@ export class CheckoutComponent implements OnInit {
   orderItems: OrderItem[] = [];
   userId: string = localStorage.getItem('userId');
 
+  
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
